@@ -7,6 +7,7 @@
 Rain is also a command line tool for working with [AWS CloudFormation](https://aws.amazon.com/cloudformation/) templates and stacks.
 
 [![Make it Rain](./docs/rain.svg)](https://asciinema.org/a/vtbAXkriC0zg0T2UzP0t63G4S?autoplay=1)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fstilvoid%2Frain.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fstilvoid%2Frain?ref=badge_shield)
 
 Key features:
 
@@ -65,6 +66,9 @@ To contribute a change to Rain, just [fork this repository](https://github.com/a
 Rain is licensed under the Apache 2.0 License. 
 
 ---
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fstilvoid%2Frain.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fstilvoid%2Frain?ref=badge_large)
 
 ## Other CloudFormation tools
 
