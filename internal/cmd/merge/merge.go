@@ -61,6 +61,11 @@ var Cmd = &cobra.Command{
 	},
 }
 
+// MergeTemplates merges two CloudFormation templates (public function for MCP server)
+func MergeTemplates(dst, src *cft.Template) (*cft.Template, error) {
+	return mergeTemplates(dst, src)
+}
+
 func init() {
 	Cmd.Flags().StringVarP(&outFn, "output", "o", "", "Output merged template to a file")
 	Cmd.Flags().BoolVarP(&forceMerge, "force", "f", false, "Don't warn on clashing attributes; rename them instead. Note: this will not rename Refs, GetAtts, etc.")

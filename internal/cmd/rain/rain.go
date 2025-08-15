@@ -20,6 +20,7 @@ import (
 	"github.com/aws-cloudformation/rain/internal/cmd/info"
 	"github.com/aws-cloudformation/rain/internal/cmd/logs"
 	"github.com/aws-cloudformation/rain/internal/cmd/ls"
+	"github.com/aws-cloudformation/rain/internal/cmd/mcp"
 	"github.com/aws-cloudformation/rain/internal/cmd/merge"
 	"github.com/aws-cloudformation/rain/internal/cmd/module"
 	"github.com/aws-cloudformation/rain/internal/cmd/pkg"
@@ -107,6 +108,7 @@ func init() {
 	// Other commands
 	addCommand("", true, false, consolecmd.Cmd)
 	addCommand("", true, false, info.Cmd)
+	addCommand("", false, false, mcp.Cmd)
 
 	// Customise usage
 	Cmd.Annotations = map[string]string{"Groups": fmt.Sprintf("%s|%s", stackGroup, templateGroup)}

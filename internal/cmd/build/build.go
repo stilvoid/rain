@@ -287,8 +287,17 @@ func isSAM(typeName string) bool {
 	return slices.Contains(transforms, typeName)
 }
 
-func build(typeNames []string) (*cft.Template, error) {
+// BuildTemplate creates a CloudFormation template from resource type names
+// This is an exported version of the internal build function for use by other packages
+func BuildTemplate(typeNames []string, bare bool) (*cft.Template, error) {
+	return buildWithOptions(typeNames, bare)
+}
 
+func build(typeNames []string) (*cft.Template, error) {
+	return buildWithOptions(typeNames, bareTemplate)
+}
+
+func buildWithOptions(typeNames []string, bare bool) (*cft.Template, error) {
 	t := startTemplate()
 
 	// Add the Resources section
@@ -317,7 +326,7 @@ func build(typeNames []string) (*cft.Template, error) {
 
 		// Recursively build the node
 		ancestorTypes := make([]string, 0)
-		err = buildNode(props, schema, schema, ancestorTypes, bareTemplate)
+		err = buildNode(props, schema, schema, ancestorTypes, bare)
 		if err != nil {
 			return t, err
 		}
